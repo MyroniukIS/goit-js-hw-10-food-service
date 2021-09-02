@@ -1,1 +1,2 @@
-import './sass/main.scss';
+// import './styles/styles.css';
+import './js/menu-galary'
