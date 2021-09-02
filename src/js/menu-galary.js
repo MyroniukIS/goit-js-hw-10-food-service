@@ -3,7 +3,7 @@ import data from "../db/menu.json"
 import menuTemplate from "../templates/menuTemplate.hbs"
 // console.log(menuTemplate(data));
 const template = menuTemplate(data);
-console.log(template);
+// console.log(template);
 
 const body = document.querySelector("body");
 // console.log(body);
