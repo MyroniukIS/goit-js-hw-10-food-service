@@ -10,8 +10,13 @@ console.log(body);
 const checkbox = document.querySelector(".theme-switch__toggle");
 console.log(checkbox);
 
-body.classList.add(Theme.LIGHT);
-localStorage.setItem("class", Theme.LIGHT);
+if (!localStorage.getItem("class")) {
+    body.classList.add(Theme.LIGHT);
+    localStorage.setItem("class", Theme.LIGHT);
+} else {
+    body.classList.add(localStorage.getItem("class"));
+}
+
 
 checkbox.addEventListener('change', (e) => {
     // console.log(e);
@@ -19,8 +24,10 @@ checkbox.addEventListener('change', (e) => {
     if (body.classList.contains(Theme.LIGHT)) {
         body.classList.replace(Theme.LIGHT, Theme.DARK);
         localStorage.setItem("class", Theme.DARK);
+        checkbox.checked = true;
     } else {
         body.classList.replace(Theme.DARK, Theme.LIGHT);
         localStorage.setItem("class", Theme.LIGHT);
+        checkbox.checked = false;
     }
 });
