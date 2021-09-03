@@ -9,12 +9,18 @@ console.log(body);
 
 const checkbox = document.querySelector(".theme-switch__toggle");
 console.log(checkbox);
+
 body.classList.add(Theme.LIGHT);
+localStorage.setItem("class", Theme.LIGHT);
+
 checkbox.addEventListener('change', (e) => {
-    console.log(e);
-    // body.classList.remove(Theme.LIGHT);
-    body.classList.toggle(Theme.DARK);
-    if (body.classList.contains(Theme.DARK)) {
-        body.classList.remove(Theme.LIGHT);
+    // console.log(e);
+    
+    if (body.classList.contains(Theme.LIGHT)) {
+        body.classList.replace(Theme.LIGHT, Theme.DARK);
+        localStorage.setItem("class", Theme.DARK);
+    } else {
+        body.classList.replace(Theme.DARK, Theme.LIGHT);
+        localStorage.setItem("class", Theme.LIGHT);
     }
 });
