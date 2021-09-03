@@ -15,6 +15,11 @@ if (!localStorage.getItem("class")) {
     localStorage.setItem("class", Theme.LIGHT);
 } else {
     body.classList.add(localStorage.getItem("class"));
+        if (localStorage.getItem('class') === Theme.LIGHT) {
+            checkbox.checked = false;
+    } else {
+            checkbox.checked = true;
+    }
 }
 
 
