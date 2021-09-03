@@ -2,13 +2,13 @@ const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
-console.log(Theme);
+// console.log(Theme);
 
 const body = document.querySelector("body");
-console.log(body);
+// console.log(body);
 
 const checkbox = document.querySelector(".theme-switch__toggle");
-console.log(checkbox);
+// console.log(checkbox);
 
 if (!localStorage.getItem("class")) {
     body.classList.add(Theme.LIGHT);
